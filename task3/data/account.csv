@@ -1,0 +1,11 @@
+owner_id,account_status,balance,account_history
+1,active,1500.00,"Opened on 2025-01-05; initial deposit 1500.00"
+2,active,2300.50,"Opened on 2025-01-10; initial deposit 2300.50"
+3,active,1250.75,"Opened on 2025-01-12; initial deposit 1250.75"
+4,active,980.00,"Opened on 2025-01-15; initial deposit 980.00"
+5,active,3050.20,"Opened on 2025-01-20; initial deposit 3050.20"
+6,active,1750.10,"Opened on 2025-01-22; initial deposit 1750.10"
+7,active,2650.00,"Opened on 2025-01-25; initial deposit 2650.00"
+8,active,3150.80,"Opened on 2025-01-30; initial deposit 3150.80"
+9,active,1320.30,"Opened on 2025-02-02; initial deposit 1320.30"
+10,active,4050.50,"Opened on 2025-02-05; initial deposit 4050.50"

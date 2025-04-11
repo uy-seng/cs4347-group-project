@@ -1,0 +1,4 @@
+customer_id,first_name,last_name,email,SSN,password
+2,Bob,Smith,admin.bob@example.com,222-22-2222,adminbobpwd
+5,Eva,Brown,admin.eva@example.com,555-55-5555,adminevapwd
+7,Grace,Martinez,admin.grace@example.com,777-77-7777,admingracepwd
