@@ -38,7 +38,7 @@ CREATE TABLE Administrator (
     email VARCHAR(100) NOT NULL UNIQUE,
     SSN VARCHAR(20) NOT NULL UNIQUE,
     password VARCHAR(100) NOT NULL,
-    PRIMARY KEY (administrator_id),
+    PRIMARY KEY (administrator_id, customer_id),
     FOREIGN KEY (customer_id) REFERENCES Customer(customer_id)
 );
 
