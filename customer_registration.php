@@ -41,7 +41,7 @@
       }
     } else {
       require_once "database.php";
-      $sql = "INSERT INTO customer (first_name, last_name, email, SSN, password) VALUES (?,?,?,?,?)";
+      $sql = "INSERT INTO Customer (first_name, last_name, email, SSN, password) VALUES (?,?,?,?,?)";
       $stmt = mysqli_stmt_init($conn);
       $prepareStmt = mysqli_stmt_prepare($stmt, $sql);
       if ($prepareStmt) {
@@ -73,8 +73,8 @@
     <label for="password">Password:</label>
     <input type="password" id="password" name="password">
     <br><br>
-    <label for="password">Repeat Password:</label>
-    <input type="password" id="password" name="password_repeat">
+    <label for="confirm-password">Repeat Password:</label>
+    <input type="password" id="confirm-password" name="confirm-password">
     <br><br>
     <input type="submit" value="Register" name="submit">
   </form>
