@@ -1,4 +1,11 @@
-# Run using Docker
+# Running Projects
+
+## Prerequisites
+
+- PHP
+- Docker
+
+# Seeding Data to MySQL (Docker)
 
 This document describes how to run a MySQL Docker container, load a database schema and CSV data files, and verify that the tables have been created and populated correctly.
 
@@ -20,7 +27,7 @@ docker pull mysql:latest
 
 Replace /path/to/your/project with the absolute path to your project directory containing create.sql, load.sql, and the data folder. Also, replace yourpassword with your chosen MySQL root password.
 
-docker run --name test-mysql -v /path/to/your/project:/var/www/html -e MYSQL_ROOT_PASSWORD=yourpassword -p 5432:5432 -d mysql:latest
+docker run --name test-mysql -v /path/to/your/project:/var/www/html -e MYSQL_ROOT_PASSWORD=yourpassword -e MYSQL_DATABASE=cs4347_group_project -p 3306:3306 -d mysql:latest
 
 ### 3. Enter the Container Shell
 
