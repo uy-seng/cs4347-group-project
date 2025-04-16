@@ -5,6 +5,10 @@
 - PHP
 - Docker
 
+### 1. Run using
+
+php -S 127.0.0.1:8000
+
 # Seeding Data to MySQL (Docker)
 
 This document describes how to run a MySQL Docker container, load a database schema and CSV data files, and verify that the tables have been created and populated correctly.
