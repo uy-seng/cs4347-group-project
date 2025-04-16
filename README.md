@@ -20,7 +20,7 @@ docker pull mysql:latest
 
 Replace /path/to/your/project with the absolute path to your project directory containing create.sql, load.sql, and the data folder. Also, replace yourpassword with your chosen MySQL root password.
 
-docker run --name test-mysql -v /path/to/your/project:/var/www/html -e MYSQL_ROOT_PASSWORD=yourpassword -d mysql:latest
+docker run --name test-mysql -v /path/to/your/project:/var/www/html -e MYSQL_ROOT_PASSWORD=yourpassword -p 5432:5432 -d mysql:latest
 
 ### 3. Enter the Container Shell
 
