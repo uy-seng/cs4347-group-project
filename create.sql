@@ -32,14 +32,12 @@ CREATE TABLE Customer (
 -- Create Administrator table
 CREATE TABLE Administrator (
     administrator_id INT NOT NULL AUTO_INCREMENT,
-    customer_id INT NOT NULL,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     SSN VARCHAR(20) NOT NULL UNIQUE,
     password VARCHAR(100) NOT NULL,
-    PRIMARY KEY (administrator_id, customer_id),
-    FOREIGN KEY (customer_id) REFERENCES Customer(customer_id)
+    PRIMARY KEY (administrator_id)
 );
 
 -- Create Account table
