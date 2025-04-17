@@ -1,3 +1,4 @@
-customer_id,first_name,last_name,email,SSN,password
-1,Alice,Smith,alice.smith.admin@example.com,422948509,Z850kEnydx
-2,Bob,Johnson,bob.johnson.admin@example.com,927449957,js8JHUdKF0
+administrator_id,first_name,last_name,email,SSN,password
+1,John,Smith,alice.smith@example.com,283-87-2898,password123
+2,Carrie,Johnson,bob.johnson@example.com,120-56-9898,password123
+3,Denton,Williams,carol.williams@example.com,882-81-4302,password123

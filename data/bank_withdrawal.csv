@@ -1,40 +1,31 @@
-account_id,name,date,amount,new_balance,transaction_type,from_account,to_account
-8,Withdrawal,2025-04-07 00:00:00,468.51,4211.55,withdrawal,,
-1,Withdrawal,2025-03-21 00:00:00,499.24,-120.53,withdrawal,,
-4,Withdrawal,2025-02-06 00:00:00,87.3,1991.2,withdrawal,,
-3,Withdrawal,2025-01-15 00:00:00,445.96,2851.47,withdrawal,,
-9,Withdrawal,2025-02-02 00:00:00,453.61,2766.39,withdrawal,,
-5,Withdrawal,2025-04-12 00:00:00,486.38,3065.38,withdrawal,,
-1,Withdrawal,2025-01-27 00:00:00,344.21,-308.35,withdrawal,,
-2,Withdrawal,2025-04-10 00:00:00,284.34,4109.19,withdrawal,,
-6,Withdrawal,2025-04-13 00:00:00,338.25,2906.48,withdrawal,,
-4,Withdrawal,2025-01-21 00:00:00,395.81,1571.36,withdrawal,,
-2,Withdrawal,2025-01-05 00:00:00,430.71,3678.48,withdrawal,,
-6,Withdrawal,2025-04-12 00:00:00,436.95,2469.53,withdrawal,,
-6,Withdrawal,2025-01-09 00:00:00,483.78,1985.75,withdrawal,,
-5,Withdrawal,2025-03-24 00:00:00,259.61,2805.77,withdrawal,,
-9,Withdrawal,2025-01-04 00:00:00,66.52,2504.21,withdrawal,,
-2,Withdrawal,2025-03-15 00:00:00,103.14,3575.34,withdrawal,,
-4,Withdrawal,2025-02-25 00:00:00,44.29,2091.74,withdrawal,,
-5,Withdrawal,2025-01-27 00:00:00,220.65,3032.3,withdrawal,,
-2,Withdrawal,2025-03-07 00:00:00,335.29,3575.11,withdrawal,,
-10,Withdrawal,2025-01-12 00:00:00,411.03,745.3,withdrawal,,
-8,Withdrawal,2025-02-01 00:00:00,82.31,3990.97,withdrawal,,
-8,Withdrawal,2025-04-07 00:00:00,131.15,3003.31,withdrawal,,
-5,Withdrawal,2025-02-10 00:00:00,447.58,2387.68,withdrawal,,
-7,Withdrawal,2025-04-09 00:00:00,296.2,2852.13,withdrawal,,
-5,Withdrawal,2025-02-23 00:00:00,273.73,2113.95,withdrawal,,
-7,Withdrawal,2025-01-04 00:00:00,200.54,2895.31,withdrawal,,
-4,Withdrawal,2025-02-11 00:00:00,175.38,2367.02,withdrawal,,
-7,Withdrawal,2025-04-07 00:00:00,476.09,1997.37,withdrawal,,
-7,Withdrawal,2025-01-11 00:00:00,240.45,1756.92,withdrawal,,
-3,Withdrawal,2025-03-27 00:00:00,66.05,3789.24,withdrawal,,
-4,Withdrawal,2025-03-31 00:00:00,135.56,2316.13,withdrawal,,
-1,Withdrawal,2025-03-15 00:00:00,341.9,-23.1,withdrawal,,
-7,Withdrawal,2025-04-02 00:00:00,107.18,1649.74,withdrawal,,
-1,Withdrawal,2025-03-10 00:00:00,219.91,-243.01,withdrawal,,
-1,Withdrawal,2025-03-04 00:00:00,61.71,-304.72,withdrawal,,
-10,Withdrawal,2025-02-11 00:00:00,427.34,931.01,withdrawal,,
-2,Withdrawal,2025-02-27 00:00:00,129.49,3175.85,withdrawal,,
-1,Withdrawal,2025-02-11 00:00:00,99.1,-403.82,withdrawal,,
-4,Withdrawal,2025-04-13 00:00:00,136.59,2179.54,withdrawal,,
+account_id,name,date,amount,new_balance,transaction_type
+4,Transaction 1,2025-02-26 00:00:00,21.99,1024.58,withdrawal
+4,Transaction 4,2025-03-08 00:00:00,303.92,1706.6,withdrawal
+2,Transaction 9,2025-03-12 00:00:00,339.16,1849.14,withdrawal
+3,Transaction 23,2025-02-09 00:00:00,264.95,5797.57,withdrawal
+6,Transaction 25,2025-03-27 00:00:00,289.49,1026.62,withdrawal
+9,Transaction 27,2025-02-28 00:00:00,154.51,559.65,withdrawal
+8,Transaction 28,2025-01-02 00:00:00,58.57,3628.2,withdrawal
+9,Transaction 31,2025-04-12 00:00:00,461.08,3721.19,withdrawal
+5,Transaction 34,2025-01-18 00:00:00,105.12,3535.01,withdrawal
+4,Transaction 41,2025-02-25 00:00:00,35.11,8638.32,withdrawal
+1,Transaction 45,2025-01-22 00:00:00,336.55,7855.61,withdrawal
+9,Transaction 46,2025-01-07 00:00:00,282.0,7022.65,withdrawal
+7,Transaction 47,2025-03-28 00:00:00,277.33,2861.76,withdrawal
+8,Transaction 49,2025-03-20 00:00:00,441.2,5263.25,withdrawal
+9,Transaction 50,2025-03-02 00:00:00,16.5,4868.46,withdrawal
+4,Transaction 53,2025-02-16 00:00:00,110.87,9996.55,withdrawal
+7,Transaction 56,2025-02-22 00:00:00,477.13,7621.44,withdrawal
+9,Transaction 61,2025-02-26 00:00:00,81.14,342.65,withdrawal
+3,Transaction 62,2025-02-23 00:00:00,15.97,1769.17,withdrawal
+1,Transaction 63,2025-02-22 00:00:00,442.15,2721.14,withdrawal
+9,Transaction 64,2025-02-18 00:00:00,84.42,6078.23,withdrawal
+7,Transaction 70,2025-01-27 00:00:00,129.37,6856.47,withdrawal
+10,Transaction 77,2025-04-03 00:00:00,448.14,7016.65,withdrawal
+8,Transaction 80,2025-03-28 00:00:00,115.17,7122.83,withdrawal
+2,Transaction 82,2025-01-12 00:00:00,300.09,7149.38,withdrawal
+1,Transaction 83,2025-03-18 00:00:00,39.55,527.69,withdrawal
+5,Transaction 86,2025-04-10 00:00:00,147.04,3221.92,withdrawal
+3,Transaction 87,2025-02-21 00:00:00,469.8,6647.07,withdrawal
+1,Transaction 94,2025-03-09 00:00:00,468.39,6203.52,withdrawal
+4,Transaction 100,2025-02-04 00:00:00,270.85,7451.4,withdrawal
