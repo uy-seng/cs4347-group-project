@@ -1,28 +1,25 @@
-account_id,name,date,amount,new_balance,transaction_type
-1,Transaction 3,2025-03-03 00:00:00,358.13,7673.41,deposit
-2,Transaction 5,2025-02-13 00:00:00,107.63,2645.88,deposit
-6,Transaction 6,2025-03-23 00:00:00,109.28,8136.29,deposit
-6,Transaction 13,2025-01-26 00:00:00,485.57,5440.1,deposit
-5,Transaction 21,2025-01-15 00:00:00,332.46,8541.14,deposit
-7,Transaction 24,2025-01-06 00:00:00,218.66,7913.53,deposit
-6,Transaction 29,2025-01-20 00:00:00,379.58,5809.43,deposit
-8,Transaction 37,2025-03-29 00:00:00,395.97,9170.95,deposit
-3,Transaction 40,2025-02-10 00:00:00,444.48,2790.6,deposit
-5,Transaction 43,2025-02-02 00:00:00,497.39,3676.6,deposit
-9,Transaction 54,2025-03-25 00:00:00,183.99,9310.84,deposit
-5,Transaction 57,2025-02-28 00:00:00,155.46,6252.27,deposit
-4,Transaction 58,2025-03-15 00:00:00,317.88,7074.9,deposit
-3,Transaction 59,2025-02-19 00:00:00,455.95,6631.7,deposit
-9,Transaction 60,2025-03-31 00:00:00,496.6,6404.76,deposit
-1,Transaction 65,2025-01-16 00:00:00,79.43,7787.53,deposit
-9,Transaction 68,2025-02-17 00:00:00,321.01,2234.41,deposit
-5,Transaction 72,2025-02-22 00:00:00,437.47,7446.97,deposit
-3,Transaction 75,2025-01-13 00:00:00,52.44,3509.45,deposit
-3,Transaction 84,2025-03-11 00:00:00,100.68,8540.55,deposit
-5,Transaction 89,2025-02-07 00:00:00,269.3,1909.55,deposit
-1,Transaction 91,2025-01-18 00:00:00,141.06,8886.45,deposit
-1,Transaction 92,2025-01-18 00:00:00,99.03,149.32,deposit
-5,Transaction 93,2025-01-02 00:00:00,138.93,8901.52,deposit
-1,Transaction 95,2025-02-28 00:00:00,166.95,5239.49,deposit
-4,Transaction 96,2025-04-07 00:00:00,156.32,1465.74,deposit
-4,Transaction 98,2025-01-16 00:00:00,208.83,5532.87,deposit
+account_id,name,date,amount,new_balance,transaction_type,from_account,to_account
+7,Deposit,2025-03-27 00:00:00,326.3,3647.43,deposit,,
+2,Deposit,2025-03-10 00:00:00,114.45,4386.03,deposit,,
+5,Deposit,2025-02-14 00:00:00,441.62,3378.32,deposit,,
+9,Deposit,2025-02-04 00:00:00,148.06,3220.0,deposit,,
+1,Deposit,2025-03-23 00:00:00,217.55,-184.74,deposit,,
+5,Deposit,2025-01-01 00:00:00,173.44,3551.76,deposit,,
+3,Deposit,2025-02-22 00:00:00,22.15,2784.44,deposit,,
+4,Deposit,2025-04-15 00:00:00,460.04,2031.4,deposit,,
+4,Deposit,2025-03-26 00:00:00,104.63,2136.03,deposit,,
+5,Deposit,2025-03-16 00:00:00,481.64,3287.41,deposit,,
+5,Deposit,2025-01-14 00:00:00,302.32,3589.73,deposit,,
+3,Deposit,2025-01-06 00:00:00,129.97,3516.78,deposit,,
+10,Deposit,2025-04-02 00:00:00,351.21,1096.51,deposit,,
+1,Deposit,2025-04-10 00:00:00,218.32,108.12,deposit,,
+4,Deposit,2025-02-28 00:00:00,75.34,2328.67,deposit,,
+8,Deposit,2025-04-02 00:00:00,150.01,3153.32,deposit,,
+2,Deposit,2025-01-20 00:00:00,123.32,3698.43,deposit,,
+3,Deposit,2025-02-03 00:00:00,195.76,3855.29,deposit,,
+9,Deposit,2025-02-14 00:00:00,119.87,2900.97,deposit,,
+4,Deposit,2025-03-21 00:00:00,84.67,2451.69,deposit,,
+6,Deposit,2025-03-19 00:00:00,307.55,2391.99,deposit,,
+2,Deposit,2025-02-09 00:00:00,62.97,3305.34,deposit,,
+10,Deposit,2025-04-12 00:00:00,492.08,1605.26,deposit,,
+6,Deposit,2025-03-06 00:00:00,327.3,2719.29,deposit,,

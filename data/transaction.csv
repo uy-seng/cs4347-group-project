@@ -1,101 +1,101 @@
 account_id,name,date,amount,new_balance,transaction_type
-4,Transaction 1,2025-02-26 00:00:00,21.99,1024.58,withdrawal
-4,Transaction 2,2025-04-14 00:00:00,302.42,8386.23,transfer
-1,Transaction 3,2025-03-03 00:00:00,358.13,7673.41,deposit
-4,Transaction 4,2025-03-08 00:00:00,303.92,1706.6,withdrawal
-2,Transaction 5,2025-02-13 00:00:00,107.63,2645.88,deposit
-6,Transaction 6,2025-03-23 00:00:00,109.28,8136.29,deposit
-3,Transaction 7,2025-01-08 00:00:00,403.8,3091.05,transfer
-2,Transaction 8,2025-01-04 00:00:00,211.73,4200.25,transfer
-2,Transaction 9,2025-03-12 00:00:00,339.16,1849.14,withdrawal
-10,Transaction 10,2025-01-29 00:00:00,335.29,5763.23,transfer
-6,Transaction 11,2025-04-15 00:00:00,407.44,5552.7,transfer
-6,Transaction 12,2025-04-12 00:00:00,222.65,8771.45,transfer
-6,Transaction 13,2025-01-26 00:00:00,485.57,5440.1,deposit
-1,Transaction 14,2025-02-18 00:00:00,297.65,6971.23,transfer
-8,Transaction 15,2025-03-05 00:00:00,185.21,900.19,transfer
-1,Transaction 16,2025-03-06 00:00:00,481.58,2986.51,transfer
-9,Transaction 17,2025-02-06 00:00:00,274.15,8661.17,transfer
-3,Transaction 18,2025-04-11 00:00:00,472.77,4019.75,transfer
-10,Transaction 19,2025-04-12 00:00:00,112.22,1758.78,transfer
-4,Transaction 20,2025-02-28 00:00:00,49.84,83.48,transfer
-5,Transaction 21,2025-01-15 00:00:00,332.46,8541.14,deposit
-9,Transaction 22,2025-04-16 00:00:00,443.51,3584.92,transfer
-3,Transaction 23,2025-02-09 00:00:00,264.95,5797.57,withdrawal
-7,Transaction 24,2025-01-06 00:00:00,218.66,7913.53,deposit
-6,Transaction 25,2025-03-27 00:00:00,289.49,1026.62,withdrawal
-10,Transaction 26,2025-04-06 00:00:00,210.94,3859.75,transfer
-9,Transaction 27,2025-02-28 00:00:00,154.51,559.65,withdrawal
-8,Transaction 28,2025-01-02 00:00:00,58.57,3628.2,withdrawal
-6,Transaction 29,2025-01-20 00:00:00,379.58,5809.43,deposit
-1,Transaction 30,2025-03-16 00:00:00,401.6,2149.84,transfer
-9,Transaction 31,2025-04-12 00:00:00,461.08,3721.19,withdrawal
-8,Transaction 32,2025-03-03 00:00:00,152.14,6805.28,transfer
-9,Transaction 33,2025-01-18 00:00:00,335.04,5240.08,transfer
-5,Transaction 34,2025-01-18 00:00:00,105.12,3535.01,withdrawal
-8,Transaction 35,2025-03-10 00:00:00,453.68,5634.19,transfer
-9,Transaction 36,2025-01-03 00:00:00,172.78,1800.85,transfer
-8,Transaction 37,2025-03-29 00:00:00,395.97,9170.95,deposit
-8,Transaction 38,2025-03-29 00:00:00,251.01,9691.01,transfer
-4,Transaction 39,2025-04-03 00:00:00,243.16,5514.58,transfer
-3,Transaction 40,2025-02-10 00:00:00,444.48,2790.6,deposit
-4,Transaction 41,2025-02-25 00:00:00,35.11,8638.32,withdrawal
-4,Transaction 42,2025-01-02 00:00:00,148.52,7025.05,transfer
-5,Transaction 43,2025-02-02 00:00:00,497.39,3676.6,deposit
-8,Transaction 44,2025-01-17 00:00:00,392.78,6893.49,transfer
-1,Transaction 45,2025-01-22 00:00:00,336.55,7855.61,withdrawal
-9,Transaction 46,2025-01-07 00:00:00,282.0,7022.65,withdrawal
-7,Transaction 47,2025-03-28 00:00:00,277.33,2861.76,withdrawal
-9,Transaction 48,2025-03-08 00:00:00,226.65,4612.8,transfer
-8,Transaction 49,2025-03-20 00:00:00,441.2,5263.25,withdrawal
-9,Transaction 50,2025-03-02 00:00:00,16.5,4868.46,withdrawal
-6,Transaction 51,2025-03-24 00:00:00,384.6,4931.94,transfer
-5,Transaction 52,2025-03-12 00:00:00,30.07,4788.5,transfer
-4,Transaction 53,2025-02-16 00:00:00,110.87,9996.55,withdrawal
-9,Transaction 54,2025-03-25 00:00:00,183.99,9310.84,deposit
-10,Transaction 55,2025-03-07 00:00:00,230.06,9755.94,transfer
-7,Transaction 56,2025-02-22 00:00:00,477.13,7621.44,withdrawal
-5,Transaction 57,2025-02-28 00:00:00,155.46,6252.27,deposit
-4,Transaction 58,2025-03-15 00:00:00,317.88,7074.9,deposit
-3,Transaction 59,2025-02-19 00:00:00,455.95,6631.7,deposit
-9,Transaction 60,2025-03-31 00:00:00,496.6,6404.76,deposit
-9,Transaction 61,2025-02-26 00:00:00,81.14,342.65,withdrawal
-3,Transaction 62,2025-02-23 00:00:00,15.97,1769.17,withdrawal
-1,Transaction 63,2025-02-22 00:00:00,442.15,2721.14,withdrawal
-9,Transaction 64,2025-02-18 00:00:00,84.42,6078.23,withdrawal
-1,Transaction 65,2025-01-16 00:00:00,79.43,7787.53,deposit
-3,Transaction 66,2025-01-29 00:00:00,315.9,7822.79,transfer
-10,Transaction 67,2025-03-31 00:00:00,178.15,7398.56,transfer
-9,Transaction 68,2025-02-17 00:00:00,321.01,2234.41,deposit
-2,Transaction 69,2025-02-13 00:00:00,240.69,6496.57,transfer
-7,Transaction 70,2025-01-27 00:00:00,129.37,6856.47,withdrawal
-1,Transaction 71,2025-02-28 00:00:00,205.57,6662.73,transfer
-5,Transaction 72,2025-02-22 00:00:00,437.47,7446.97,deposit
-9,Transaction 73,2025-04-14 00:00:00,415.92,8539.45,transfer
-5,Transaction 74,2025-04-12 00:00:00,358.82,200.53,transfer
-3,Transaction 75,2025-01-13 00:00:00,52.44,3509.45,deposit
-6,Transaction 76,2025-04-12 00:00:00,259.7,2487.83,transfer
-10,Transaction 77,2025-04-03 00:00:00,448.14,7016.65,withdrawal
-2,Transaction 78,2025-02-13 00:00:00,268.04,8622.78,transfer
-8,Transaction 79,2025-01-05 00:00:00,484.28,8924.59,transfer
-8,Transaction 80,2025-03-28 00:00:00,115.17,7122.83,withdrawal
-2,Transaction 81,2025-04-04 00:00:00,87.91,1354.98,transfer
-2,Transaction 82,2025-01-12 00:00:00,300.09,7149.38,withdrawal
-1,Transaction 83,2025-03-18 00:00:00,39.55,527.69,withdrawal
-3,Transaction 84,2025-03-11 00:00:00,100.68,8540.55,deposit
-5,Transaction 85,2025-01-15 00:00:00,101.01,1529.19,transfer
-5,Transaction 86,2025-04-10 00:00:00,147.04,3221.92,withdrawal
-3,Transaction 87,2025-02-21 00:00:00,469.8,6647.07,withdrawal
-8,Transaction 88,2025-02-03 00:00:00,484.61,3186.74,transfer
-5,Transaction 89,2025-02-07 00:00:00,269.3,1909.55,deposit
-5,Transaction 90,2025-03-18 00:00:00,52.65,7201.59,transfer
-1,Transaction 91,2025-01-18 00:00:00,141.06,8886.45,deposit
-1,Transaction 92,2025-01-18 00:00:00,99.03,149.32,deposit
-5,Transaction 93,2025-01-02 00:00:00,138.93,8901.52,deposit
-1,Transaction 94,2025-03-09 00:00:00,468.39,6203.52,withdrawal
-1,Transaction 95,2025-02-28 00:00:00,166.95,5239.49,deposit
-4,Transaction 96,2025-04-07 00:00:00,156.32,1465.74,deposit
-1,Transaction 97,2025-03-08 00:00:00,65.17,2788.19,transfer
-4,Transaction 98,2025-01-16 00:00:00,208.83,5532.87,deposit
-7,Transaction 99,2025-02-12 00:00:00,245.07,9023.44,transfer
-4,Transaction 100,2025-02-04 00:00:00,270.85,7451.4,withdrawal
+7,Deposit,2025-03-27 00:00:00,326.3,3647.43,deposit
+8,Withdrawal,2025-04-07 00:00:00,468.51,4211.55,withdrawal
+1,Withdrawal,2025-03-21 00:00:00,499.24,-120.53,withdrawal
+2,Deposit,2025-03-10 00:00:00,114.45,4386.03,deposit
+5,Deposit,2025-02-14 00:00:00,441.62,3378.32,deposit
+4,Withdrawal,2025-02-06 00:00:00,87.3,1991.2,withdrawal
+9,Transfer,2025-02-08 00:00:00,309.72,3071.94,transfer
+1,Transfer,2025-04-15 00:00:00,281.76,-402.29,transfer
+3,Withdrawal,2025-01-15 00:00:00,445.96,2851.47,withdrawal
+9,Deposit,2025-02-04 00:00:00,148.06,3220.0,deposit
+4,Transfer,2025-02-13 00:00:00,109.76,1881.44,transfer
+9,Withdrawal,2025-02-02 00:00:00,453.61,2766.39,withdrawal
+1,Deposit,2025-03-23 00:00:00,217.55,-184.74,deposit
+5,Deposit,2025-01-01 00:00:00,173.44,3551.76,deposit
+3,Transfer,2025-02-03 00:00:00,89.18,2762.29,transfer
+9,Transfer,2025-02-24 00:00:00,284.84,2570.73,transfer
+2,Transfer,2025-01-20 00:00:00,277.34,4393.53,transfer
+10,Transfer,2025-01-19 00:00:00,220.6,1358.68,transfer
+5,Withdrawal,2025-04-12 00:00:00,486.38,3065.38,withdrawal
+1,Withdrawal,2025-01-27 00:00:00,344.21,-308.35,withdrawal
+2,Withdrawal,2025-04-10 00:00:00,284.34,4109.19,withdrawal
+7,Transfer,2025-04-06 00:00:00,85.73,3839.04,transfer
+3,Deposit,2025-02-22 00:00:00,22.15,2784.44,deposit
+6,Withdrawal,2025-04-13 00:00:00,338.25,2906.48,withdrawal
+4,Withdrawal,2025-01-21 00:00:00,395.81,1571.36,withdrawal
+2,Withdrawal,2025-01-05 00:00:00,430.71,3678.48,withdrawal
+4,Deposit,2025-04-15 00:00:00,460.04,2031.4,deposit
+6,Withdrawal,2025-04-12 00:00:00,436.95,2469.53,withdrawal
+4,Deposit,2025-03-26 00:00:00,104.63,2136.03,deposit
+6,Withdrawal,2025-01-09 00:00:00,483.78,1985.75,withdrawal
+5,Withdrawal,2025-03-24 00:00:00,259.61,2805.77,withdrawal
+9,Withdrawal,2025-01-04 00:00:00,66.52,2504.21,withdrawal
+5,Deposit,2025-03-16 00:00:00,481.64,3287.41,deposit
+5,Deposit,2025-01-14 00:00:00,302.32,3589.73,deposit
+6,Transfer,2025-04-11 00:00:00,163.7,1822.05,transfer
+2,Withdrawal,2025-03-15 00:00:00,103.14,3575.34,withdrawal
+1,Transfer,2025-02-25 00:00:00,10.83,-319.18,transfer
+4,Withdrawal,2025-02-25 00:00:00,44.29,2091.74,withdrawal
+6,Transfer,2025-02-10 00:00:00,335.06,1486.99,transfer
+5,Transfer,2025-02-09 00:00:00,336.78,3252.95,transfer
+7,Transfer,2025-02-07 00:00:00,281.66,3894.16,transfer
+7,Transfer,2025-02-18 00:00:00,341.89,3552.27,transfer
+10,Transfer,2025-02-08 00:00:00,208.98,1324.23,transfer
+5,Withdrawal,2025-01-27 00:00:00,220.65,3032.3,withdrawal
+10,Transfer,2025-03-25 00:00:00,167.9,1156.33,transfer
+8,Transfer,2025-01-28 00:00:00,260.48,4118.97,transfer
+2,Withdrawal,2025-03-07 00:00:00,335.29,3575.11,withdrawal
+10,Withdrawal,2025-01-12 00:00:00,411.03,745.3,withdrawal
+4,Transfer,2025-02-09 00:00:00,120.07,2253.33,transfer
+3,Deposit,2025-01-06 00:00:00,129.97,3516.78,deposit
+8,Transfer,2025-04-09 00:00:00,45.69,4073.28,transfer
+10,Deposit,2025-04-02 00:00:00,351.21,1096.51,deposit
+8,Withdrawal,2025-02-01 00:00:00,82.31,3990.97,withdrawal
+1,Deposit,2025-04-10 00:00:00,218.32,108.12,deposit
+3,Transfer,2025-03-08 00:00:00,237.63,3279.15,transfer
+4,Deposit,2025-02-28 00:00:00,75.34,2328.67,deposit
+8,Transfer,2025-03-09 00:00:00,494.07,3496.9,transfer
+8,Transfer,2025-04-15 00:00:00,362.44,3134.46,transfer
+7,Transfer,2025-02-27 00:00:00,449.63,3148.33,transfer
+8,Withdrawal,2025-04-07 00:00:00,131.15,3003.31,withdrawal
+5,Transfer,2025-03-04 00:00:00,317.11,2835.26,transfer
+8,Deposit,2025-04-02 00:00:00,150.01,3153.32,deposit
+5,Withdrawal,2025-02-10 00:00:00,447.58,2387.68,withdrawal
+2,Deposit,2025-01-20 00:00:00,123.32,3698.43,deposit
+3,Transfer,2025-01-28 00:00:00,41.47,3237.68,transfer
+6,Transfer,2025-03-01 00:00:00,213.73,2084.44,transfer
+7,Withdrawal,2025-04-09 00:00:00,296.2,2852.13,withdrawal
+1,Transfer,2025-02-18 00:00:00,243.72,-135.6,transfer
+5,Withdrawal,2025-02-23 00:00:00,273.73,2113.95,withdrawal
+9,Transfer,2025-01-29 00:00:00,249.23,2704.61,transfer
+7,Withdrawal,2025-01-04 00:00:00,200.54,2895.31,withdrawal
+7,Transfer,2025-01-22 00:00:00,421.85,2473.46,transfer
+10,Transfer,2025-01-04 00:00:00,454.4,1242.18,transfer
+2,Transfer,2025-02-24 00:00:00,76.49,3621.94,transfer
+3,Deposit,2025-02-03 00:00:00,195.76,3855.29,deposit
+4,Withdrawal,2025-02-11 00:00:00,175.38,2367.02,withdrawal
+7,Withdrawal,2025-04-07 00:00:00,476.09,1997.37,withdrawal
+7,Withdrawal,2025-01-11 00:00:00,240.45,1756.92,withdrawal
+9,Deposit,2025-02-14 00:00:00,119.87,2900.97,deposit
+2,Transfer,2025-01-06 00:00:00,379.57,3242.37,transfer
+4,Deposit,2025-03-21 00:00:00,84.67,2451.69,deposit
+3,Withdrawal,2025-03-27 00:00:00,66.05,3789.24,withdrawal
+4,Withdrawal,2025-03-31 00:00:00,135.56,2316.13,withdrawal
+6,Deposit,2025-03-19 00:00:00,307.55,2391.99,deposit
+2,Deposit,2025-02-09 00:00:00,62.97,3305.34,deposit
+1,Withdrawal,2025-03-15 00:00:00,341.9,-23.1,withdrawal
+7,Withdrawal,2025-04-02 00:00:00,107.18,1649.74,withdrawal
+10,Transfer,2025-03-22 00:00:00,129.0,1113.18,transfer
+10,Deposit,2025-04-12 00:00:00,492.08,1605.26,deposit
+1,Withdrawal,2025-03-10 00:00:00,219.91,-243.01,withdrawal
+6,Deposit,2025-03-06 00:00:00,327.3,2719.29,deposit
+1,Withdrawal,2025-03-04 00:00:00,61.71,-304.72,withdrawal
+6,Transfer,2025-02-28 00:00:00,356.58,2362.71,transfer
+3,Transfer,2025-03-08 00:00:00,483.08,3306.16,transfer
+10,Transfer,2025-04-10 00:00:00,246.91,1358.35,transfer
+10,Withdrawal,2025-02-11 00:00:00,427.34,931.01,withdrawal
+2,Withdrawal,2025-02-27 00:00:00,129.49,3175.85,withdrawal
+8,Transfer,2025-03-20 00:00:00,337.41,3213.96,transfer
+1,Withdrawal,2025-02-11 00:00:00,99.1,-403.82,withdrawal
+4,Withdrawal,2025-04-13 00:00:00,136.59,2179.54,withdrawal
