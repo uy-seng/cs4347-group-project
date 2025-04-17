@@ -13,7 +13,7 @@
   <h2>Data Entry Forms</h2>
   <ul>
     <li><a href="login.html">Login Form</a></li>
-    <li><a href="administrator.html">Administrator Registration Form</a></li>
+    <li><a href="administrator_registration.php">Administrator Registration Form</a></li>
     <li><a href="customer_registration.php">Customer Registration Form</a></li>
     <li><a href="transaction.html">Transaction Form</a></li>
     <li><a href="bank_withdrawal.html">Bank Withdrawal Form</a></li>

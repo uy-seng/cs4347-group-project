@@ -25,8 +25,8 @@
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       array_push($errors, "Email is not valid.");
     }
-    if (strlen($password) < 8) {
-      array_push($errors, "Password must be at least 8 characters.");
+    if (strlen($SSN) !== 9) {
+      array_push($errors, "SSN must be 9 digits.");
     }
     if (strlen($password) > 100) {
       array_push($errors, "Password must be less than 100 characters.");
@@ -41,7 +41,7 @@
       }
     } else {
       require_once "database.php";
-      $sql = "INSERT INTO Customer (first_name, last_name, email, SSN, password) VALUES (?,?,?,?,?)";
+      $sql = "INSERT INTO customer (first_name, last_name, email, SSN, password) VALUES (?,?,?,?,?)";
       $stmt = mysqli_stmt_init($conn);
       $prepareStmt = mysqli_stmt_prepare($stmt, $sql);
       if ($prepareStmt) {
@@ -73,8 +73,8 @@
     <label for="password">Password:</label>
     <input type="password" id="password" name="password">
     <br><br>
-    <label for="confirm-password">Repeat Password:</label>
-    <input type="password" id="confirm-password" name="confirm-password">
+    <label for="password">Repeat Password:</label>
+    <input type="password" id="password" name="password_repeat">
     <br><br>
     <input type="submit" value="Register" name="submit">
   </form>
