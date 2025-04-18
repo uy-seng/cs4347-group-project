@@ -29,7 +29,7 @@ CREATE TABLE Customer (
     PRIMARY KEY (customer_id)
 );
 
--- Create Administrator table
+-- -- Create Administrator table
 CREATE TABLE Administrator (
     administrator_id INT NOT NULL AUTO_INCREMENT,
     first_name VARCHAR(50) NOT NULL,
@@ -40,7 +40,7 @@ CREATE TABLE Administrator (
     PRIMARY KEY (administrator_id)
 );
 
--- Create Account table
+-- -- Create Account table
 CREATE TABLE Account (
     account_id INT NOT NULL AUTO_INCREMENT,
     owner_id INT NOT NULL,
@@ -51,7 +51,7 @@ CREATE TABLE Account (
     FOREIGN KEY (owner_id) REFERENCES Customer(customer_id) ON DELETE CASCADE
 );
 
--- Create Transaction table
+-- -- Create Transaction table
 CREATE TABLE Transaction (
     transaction_id INT NOT NULL AUTO_INCREMENT,
     account_id INT NOT NULL,
@@ -64,7 +64,7 @@ CREATE TABLE Transaction (
     FOREIGN KEY (account_id) REFERENCES Account(account_id) ON DELETE NO ACTION
 );
 
--- Create Bank_Withdrawal table
+-- -- Create Bank_Withdrawal table
 CREATE TABLE Bank_Withdrawal (
     transaction_id INT NOT NULL AUTO_INCREMENT,
     account_id INT NOT NULL,
@@ -77,7 +77,7 @@ CREATE TABLE Bank_Withdrawal (
     FOREIGN KEY (account_id) REFERENCES Account(account_id) ON DELETE NO ACTION
 );
 
--- Create Bank_Deposit table
+-- -- Create Bank_Deposit table
 CREATE TABLE Bank_Deposit (
     transaction_id INT NOT NULL AUTO_INCREMENT,
     account_id INT NOT NULL,
@@ -90,23 +90,23 @@ CREATE TABLE Bank_Deposit (
     FOREIGN KEY (account_id) REFERENCES Account(account_id) ON DELETE NO ACTION
 );
 
--- Create Bank_Transfer table
-CREATE TABLE Bank_Transfer (
-    transaction_id INT NOT NULL AUTO_INCREMENT,
-    account_id INT NOT NULL,
-    name VARCHAR(100) NOT NULL,
-    date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    amount DECIMAL(10, 2) NOT NULL,
-    new_balance DECIMAL(10, 2) NOT NULL,
-    transaction_type VARCHAR(20) NOT NULL,
-    from_account INT NULL,
-    to_account INT NULL,
-    PRIMARY KEY (transaction_id),
-    FOREIGN KEY (account_id) REFERENCES Account(account_id) ON DELETE NO ACTION,
-    FOREIGN KEY (from_account) REFERENCES Account(account_id) ON DELETE
-    SET
-        NULL,
-        FOREIGN KEY (to_account) REFERENCES Account(account_id) ON DELETE
-    SET
-        NULL
-);
+-- -- Create Bank_Transfer table
+-- CREATE TABLE Bank_Transfer (
+--     transaction_id INT NOT NULL AUTO_INCREMENT,
+--     account_id INT NOT NULL,
+--     name VARCHAR(100) NOT NULL,
+--     date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+--     amount DECIMAL(10, 2) NOT NULL,
+--     new_balance DECIMAL(10, 2) NOT NULL,
+--     transaction_type VARCHAR(20) NOT NULL,
+--     from_account INT NULL,
+--     to_account INT NULL,
+--     PRIMARY KEY (transaction_id),
+--     FOREIGN KEY (account_id) REFERENCES Account(account_id) ON DELETE NO ACTION,
+--     FOREIGN KEY (from_account) REFERENCES Account(account_id) ON DELETE
+--     SET
+--         NULL,
+--         FOREIGN KEY (to_account) REFERENCES Account(account_id) ON DELETE
+--     SET
+--         NULL
+-- );

@@ -12,7 +12,7 @@
     $email = $_POST["email"];
     $password = $_POST["password"];
     require_once "database.php";
-    $sql = "SELECT * FROM customer WHERE email = '$email'";
+    $sql = "SELECT * FROM Customer WHERE email = '$email'";
     $result = mysqli_query($conn, $sql);
     $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
     if ($user) {
@@ -25,7 +25,7 @@
         echo "<div>Incorrect Password</div>";
       }
     } else {
-      $sql = "SELECT * FROM administrator WHERE email = '$email'";
+      $sql = "SELECT * FROM Administrator WHERE Administrator.email = '$email'";
       $result = mysqli_query($conn, $sql);
       $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
       if ($user) {

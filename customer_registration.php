@@ -42,7 +42,7 @@
     } else {
       require_once "database.php";
       mysqli_begin_transaction($conn);
-      $sql = "INSERT INTO customer (first_name, last_name, email, SSN, password) VALUES (?,?,?,?,?)";
+      $sql = "INSERT INTO Customer (first_name, last_name, email, SSN, password) VALUES (?,?,?,?,?)";
       $stmt = mysqli_stmt_init($conn);
       $prepareStmt = mysqli_stmt_prepare($stmt, $sql);
       if ($prepareStmt) {
@@ -54,7 +54,7 @@
         $balance = 0.00;
         $accountHistory = "";
 
-        $sqlAccount = "INSERT INTO account (owner_id, account_status, balance, account_history) VALUES (?,?,?,?)";
+        $sqlAccount = "INSERT INTO Account (owner_id, account_status, balance, account_history) VALUES (?,?,?,?)";
         $stmtAccount = mysqli_stmt_init($conn);
         $prepareStmtAccount = mysqli_stmt_prepare($stmtAccount, $sqlAccount);
         if ($prepareStmtAccount) {
