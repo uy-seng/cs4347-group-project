@@ -57,13 +57,13 @@ LOAD DATA INFILE '/var/lib/mysql-files/data/bank_deposit.csv' INTO TABLE Bank_De
 
 -- -- Load data into Bank_Transfer table
 -- -- Assuming bank_transfer.csv contains: account_id,name,date,amount,new_balance,transaction_type,from_account,to_account
--- LOAD DATA INFILE '/var/lib/mysql-files/data/bank_transfer.csv' INTO TABLE Bank_Transfer FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS (
---     account_id,
---     name,
---     `date`,
---     amount,
---     new_balance,
---     transaction_type,
---     from_account,
---     to_account
--- );
+LOAD DATA INFILE '/var/lib/mysql-files/data/bank_transfer.csv' INTO TABLE Bank_Transfer FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS (
+    account_id,
+    name,
+    `date`,
+    amount,
+    new_balance,
+    transaction_type,
+    from_account,
+    to_account
+);
