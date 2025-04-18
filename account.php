@@ -10,7 +10,7 @@ $user = $_SESSION["user"];
 require_once "database.php";
 $customerID = $user["customer_id"];
 
-$sql = "SELECT * FROM account WHERE owner_id = ?";
+$sql = "SELECT * FROM Account WHERE Account.owner_id = ?";
 $stmt = mysqli_prepare($conn, $sql);
 mysqli_stmt_bind_param($stmt, "i", $customerID);
 mysqli_stmt_execute($stmt);

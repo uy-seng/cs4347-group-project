@@ -41,7 +41,7 @@
       }
     } else {
       require_once "database.php";
-      $sql = "INSERT INTO administrator (first_name, last_name, email, SSN, password) VALUES (?,?,?,?,?)";
+      $sql = "INSERT INTO Administrator (first_name, last_name, email, SSN, password) VALUES (?,?,?,?,?)";
       $stmt = mysqli_stmt_init($conn);
       $prepareStmt = mysqli_stmt_prepare($stmt, $sql);
       if ($prepareStmt) {
