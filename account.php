@@ -43,7 +43,7 @@ if (!$account) {
     <p>Balance: <?php echo htmlspecialchars($account["balance"]) ?></p>
   </div>
   <a href="bank_withdrawal.html"><button>Withdrawal</button></a>
-  <a href="bank_deposit.html"><button>Deposit</button></a>
+  <a href="bank_deposit.php"><button>Deposit</button></a>
   <a href="bank_transfer.html"><button>Transfer</button></a>
   <a href="account_history.html"><button>Account History</button></a>
   <br><br>

@@ -17,7 +17,7 @@
     <li><a href="customer_registration.php">Customer Registration Form</a></li>
     <li><a href="transaction.html">Transaction Form</a></li>
     <li><a href="bank_withdrawal.html">Bank Withdrawal Form</a></li>
-    <li><a href="bank_deposit.html">Bank Deposit Form</a></li>
+    <li><a href="bank_deposit.php">Bank Deposit Form</a></li>
     <li><a href="bank_transfer.html">Bank Transfer Form</a></li>
   </ul>
 

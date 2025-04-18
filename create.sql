@@ -91,22 +91,22 @@ CREATE TABLE Bank_Deposit (
 );
 
 -- -- Create Bank_Transfer table
--- CREATE TABLE Bank_Transfer (
---     transaction_id INT NOT NULL AUTO_INCREMENT,
---     account_id INT NOT NULL,
---     name VARCHAR(100) NOT NULL,
---     date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
---     amount DECIMAL(10, 2) NOT NULL,
---     new_balance DECIMAL(10, 2) NOT NULL,
---     transaction_type VARCHAR(20) NOT NULL,
---     from_account INT NULL,
---     to_account INT NULL,
---     PRIMARY KEY (transaction_id),
---     FOREIGN KEY (account_id) REFERENCES Account(account_id) ON DELETE NO ACTION,
---     FOREIGN KEY (from_account) REFERENCES Account(account_id) ON DELETE
---     SET
---         NULL,
---         FOREIGN KEY (to_account) REFERENCES Account(account_id) ON DELETE
---     SET
---         NULL
--- );
+CREATE TABLE Bank_Transfer (
+    transaction_id INT NOT NULL AUTO_INCREMENT,
+    account_id INT NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    amount DECIMAL(10, 2) NOT NULL,
+    new_balance DECIMAL(10, 2) NOT NULL,
+    transaction_type VARCHAR(20) NOT NULL,
+    from_account INT NULL,
+    to_account INT NULL,
+    PRIMARY KEY (transaction_id),
+    FOREIGN KEY (account_id) REFERENCES Account(account_id) ON DELETE NO ACTION,
+    FOREIGN KEY (from_account) REFERENCES Account(account_id) ON DELETE
+    SET
+        NULL,
+        FOREIGN KEY (to_account) REFERENCES Account(account_id) ON DELETE
+    SET
+        NULL
+);
