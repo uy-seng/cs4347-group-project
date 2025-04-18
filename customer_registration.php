@@ -41,13 +41,31 @@
       }
     } else {
       require_once "database.php";
-      $sql = "INSERT INTO Customer (first_name, last_name, email, SSN, password) VALUES (?,?,?,?,?)";
+      mysqli_begin_transaction($conn);
+      $sql = "INSERT INTO customer (first_name, last_name, email, SSN, password) VALUES (?,?,?,?,?)";
       $stmt = mysqli_stmt_init($conn);
       $prepareStmt = mysqli_stmt_prepare($stmt, $sql);
       if ($prepareStmt) {
         mysqli_stmt_bind_param($stmt, "sssss", $firstName, $lastName, $email, $SSN, $passwordHash);
         mysqli_stmt_execute($stmt);
-        echo "<div>Registration Successful!</div>";
+
+        $customerID = mysqli_insert_id($conn);
+        $accountStatus = "active";
+        $balance = 0.00;
+        $accountHistory = "";
+
+        $sqlAccount = "INSERT INTO account (owner_id, account_status, balance, account_history) VALUES (?,?,?,?)";
+        $stmtAccount = mysqli_stmt_init($conn);
+        $prepareStmtAccount = mysqli_stmt_prepare($stmtAccount, $sqlAccount);
+        if ($prepareStmtAccount) {
+          mysqli_stmt_bind_param($stmtAccount, "isds", $customerID, $accountStatus, $balance, $accountHistory);
+          mysqli_stmt_execute($stmtAccount);
+          mysqli_commit($conn);
+        } else {
+          die("Something went wrong");
+        }
+
+        echo "<div>Registration Successful! An account has been opened for you.</div>";
       } else {
         die("Something went wrong");
       }
@@ -73,11 +91,14 @@
     <label for="password">Password:</label>
     <input type="password" id="password" name="password">
     <br><br>
-    <label for="confirm-password">Repeat Password:</label>
-    <input type="password" id="confirm-password" name="confirm-password">
+    <label for="password">Repeat Password:</label>
+    <input type="password" id="password" name="password_repeat">
     <br><br>
     <input type="submit" value="Register" name="submit">
   </form>
+  <div>
+    <p>Already Registered <a href="login.php">Login Here</a></p>
+  </div>
 </body>
 
 </html>

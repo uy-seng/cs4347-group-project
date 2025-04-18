@@ -54,6 +54,7 @@
     }
   }
   ?>
+
   <h1>Administrator Registration Form</h1>
   <form action="administrator_registration.php" method="post">
     <!-- Note: administrator_id & customer_id is auto-generated so it isn’t needed as input -->
@@ -77,6 +78,9 @@
     <br><br>
     <input type="submit" value="Register" name="submit">
   </form>
+  <div>
+    <p>Already Registered <a href="login.php">Login Here</a></p>
+  </div>
 </body>
 
 </html>

@@ -12,7 +12,7 @@
 
   <h2>Data Entry Forms</h2>
   <ul>
-    <li><a href="login.html">Login Form</a></li>
+    <li><a href="login.php">Login Form</a></li>
     <li><a href="administrator_registration.php">Administrator Registration Form</a></li>
     <li><a href="customer_registration.php">Customer Registration Form</a></li>
     <li><a href="transaction.html">Transaction Form</a></li>
@@ -23,8 +23,8 @@
 
   <h2>Data Display Pages</h2>
   <ul>
-    <li><a href="admin_information.html">Admind Page</a></li>
-    <li><a href="account.html">Account Information</a></li>
+    <li><a href="admin_information.html">Admin Page</a></li>
+    <li><a href="account.php">Account Information</a></li>
     <li><a href="account_history.html">Account History</a></li>
   </ul>
 </body>
