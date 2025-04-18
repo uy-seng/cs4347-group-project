@@ -1,56 +1,62 @@
-<?php
-session_start();
+<!DOCTYPE html>
+<html lang="en">
 
-require_once 'database.php';
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+</head>
 
-$email    = $_POST['email']    ?? '';
-$password = $_POST['password'] ?? '';
-
-function checkTable($mysqli, $table, $email, $password) {
-    $idCol = $table === 'Customer' ? 'customer_id' : 'administrator_id';
-    $sql   = "SELECT $idCol AS id, password FROM $table WHERE email = ?";
-    $stmt  = $mysqli->prepare($sql);
-    $stmt->bind_param('s', $email);
-    $stmt->execute();
-    $stmt->store_result();
-    if ($stmt->num_rows === 0) {
-        $stmt->close();
-        return false;       // not found
+<body>
+  <?php
+  if (isset($_POST["login"])) {
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+    require_once "database.php";
+    $sql = "SELECT * FROM customer WHERE email = '$email'";
+    $result = mysqli_query($conn, $sql);
+    $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    if ($user) {
+      if (password_verify($password, $user["password"])) {
+        session_start();
+        $_SESSION["user"] = $user;
+        header("Location: account.php");
+        die();
+      } else {
+        echo "<div>Incorrect Password</div>";
+      }
+    } else {
+      $sql = "SELECT * FROM administrator WHERE email = '$email'";
+      $result = mysqli_query($conn, $sql);
+      $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
+      if ($user) {
+        if (password_verify($password, $user["password"])) {
+          session_start();
+          $_SESSION["user"] = $user;
+          header("Location: index.php");
+          die();
+        } else {
+          echo "<div>Incorrect Password</div>";
+        }
+      }
+      echo "<div>Email not found</div>";
     }
-    $stmt->bind_result($id, $hash);
-    $stmt->fetch();
-    $stmt->close();
+  }
+  ?>
 
-    // verify password
-    return password_verify($password, $hash)
-         ? $id         
-         : null;        
-}
+  <h1>Login</h1>
+  <form action="login.php" method="post">
+    <!-- Log In will check user input with customer table-->
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    <br><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+    <br><br>
+    <input type="submit" value="Log In" name="login">
+  </form>
+  <div>
+    <p>Not registered yet <a href="customer_registration.php">Register Here</a></p>
+  </div>
+</body>
 
-$uid = checkTable($mysqli, 'Customer', $email, $password);
-if ($uid) {
-    $_SESSION['user_type'] = 'customer';
-    $_SESSION['user_id']   = $uid;
-    echo 'Customer login successful';
-    exit;
-}
-if ($uid === null) {
-    echo 'Invalid credentials';
-    exit;
-}
-
-$aid = checkTable($mysqli, 'Administrator', $email, $password);
-if ($aid) {
-    $_SESSION['user_type']  = 'administrator';
-    $_SESSION['administrator_id'] = $aid;
-    echo 'Administrator login successful';
-    exit;
-}
-if ($aid === null) {
-    echo 'Invalid credentials';
-    exit;
-}
-
-echo 'User not found';
-exit;
-?>
+</html>
