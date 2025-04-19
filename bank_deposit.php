@@ -17,7 +17,6 @@
     }
 
     if (isset($_POST["submit"])) {
-        echo "<div>Form submitted</div>";
 
         $user = $_SESSION["user"];
         // get user account
@@ -42,54 +41,59 @@
         $amount = (float) $_POST['amount'];
         $newBalance = $currentBalance + $amount;
         $transactionType = "Deposit";
+        $errors = array();
 
-        // insert deposit record
-        $sql = "
-      INSERT INTO Bank_Deposit 
-        (account_id, name, `date`, amount, new_balance, transaction_type)
-      VALUES (?, ?, ?, ?, ?, ?)
-    ";
-        $stmt = mysqli_prepare($conn, $sql);
-        mysqli_stmt_bind_param(
-            $stmt,
-            "issdss",
-            $acctId,
-            $name,
-            $now,
-            $amount,
-            $newBalance,
-            $transactionType
-        );
-        mysqli_stmt_execute($stmt);
-
-        // check if INSERT succeeded
-        if (mysqli_stmt_affected_rows($stmt) <= 0) {
-            header('HTTP/1.1 500 Internal Server Error');
-            exit('Error: Failed to insert deposit.');
+        if(round($amount, 2) < round(0, 2)){
+            array_push($errors, "Invalid amount.");
         }
-        mysqli_stmt_close($stmt);
 
-        // update account balance
-        $sql = "
-      UPDATE Account
-         SET balance = ?
-       WHERE account_id = ?
-    ";
-        $stmt = mysqli_prepare($conn, $sql);
-        mysqli_stmt_bind_param($stmt, "di", $newBalance, $acctId);
-        mysqli_stmt_execute($stmt);
-
-        // check if UPDATE succeeded
-        if (mysqli_stmt_affected_rows($stmt) <= 0) {
-            header('HTTP/1.1 500 Internal Server Error');
-            exit('Error: Failed to update balance.');
+        if (count($errors) > 0) {
+          foreach ($errors as $error) {
+            echo "<div>$error</div>";
+          }
         }
-        mysqli_stmt_close($stmt);
+        else{
+            // insert deposit record
+            $sql = "INSERT INTO Bank_Deposit (account_id, name, `date`, amount, new_balance, transaction_type) VALUES (?, ?, ?, ?, ?, ?)";
+            $stmt = mysqli_prepare($conn, $sql);
+            mysqli_stmt_bind_param(
+                $stmt,
+                "issdss",
+                $acctId,
+                $name,
+                $now,
+                $amount,
+                $newBalance,
+                $transactionType
+            );
+            mysqli_stmt_execute($stmt);
 
-        // 3. Redirect on success
-        header("Location: account.php");
-        exit();
+            // check if INSERT succeeded
+            if (mysqli_stmt_affected_rows($stmt) <= 0) {
+                header('HTTP/1.1 500 Internal Server Error');
+                exit('Error: Failed to insert deposit.');
+            }
+            mysqli_stmt_close($stmt);
+
+            // update account balance
+            $sql = "UPDATE Account SET balance = ? WHERE account_id = ?";
+            $stmt = mysqli_prepare($conn, $sql);
+            mysqli_stmt_bind_param($stmt, "di", $newBalance, $acctId);
+            mysqli_stmt_execute($stmt);
+
+            // check if UPDATE succeeded
+            if (mysqli_stmt_affected_rows($stmt) <= 0) {
+                header('HTTP/1.1 500 Internal Server Error');
+                exit('Error: Failed to update balance.');
+            }
+            mysqli_stmt_close($stmt);
+
+            // 3. Redirect on success
+            header("Location: account.php");
+            exit();
+        }
     }
+
     ?>
 
     <h1>Bank Deposit Form</h1>
@@ -101,8 +105,11 @@
         <label for="amount">Amount:</label>
         <input type="number" id="amount" name="amount" step="0.01" required>
         <br><br>
-        <button type="submit" name="submit">Confirm</button>
+        <input type="submit" value="Deposit" name="submit">
     </form>
+    <br>
+    <a href="account.php">Back to Account</a>
 </body>
+
 
 </html>
