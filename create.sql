@@ -66,33 +66,38 @@ CREATE TABLE Transaction (
 
 -- -- Create Bank_Withdrawal table
 CREATE TABLE Bank_Withdrawal (
-    transaction_id INT NOT NULL AUTO_INCREMENT,
+    transaction_id INT NOT NULL,
+    withdrawal_id INT NOT NULL AUTO_INCREMENT,
     account_id INT NOT NULL,
     name VARCHAR(100) NOT NULL,
     date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     amount DECIMAL(10, 2) NOT NULL,
     new_balance DECIMAL(10, 2) NOT NULL,
     transaction_type VARCHAR(20) NOT NULL,
-    PRIMARY KEY (transaction_id),
-    FOREIGN KEY (account_id) REFERENCES Account(account_id) ON DELETE NO ACTION
+    PRIMARY KEY (withdrawal_id),
+    FOREIGN KEY (account_id) REFERENCES Account(account_id) ON DELETE NO ACTION,
+    FOREIGN KEY (transaction_id) REFERENCES Transaction(transaction_id) ON DELETE CASCADE
 );
 
 -- -- Create Bank_Deposit table
 CREATE TABLE Bank_Deposit (
-    transaction_id INT NOT NULL AUTO_INCREMENT,
+    transaction_id INT NOT NULL,
+    deposit_id INT NOT NULL AUTO_INCREMENT,
     account_id INT NOT NULL,
     name VARCHAR(100) NOT NULL,
     date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     amount DECIMAL(10, 2) NOT NULL,
     new_balance DECIMAL(10, 2) NOT NULL,
     transaction_type VARCHAR(20) NOT NULL,
-    PRIMARY KEY (transaction_id),
-    FOREIGN KEY (account_id) REFERENCES Account(account_id) ON DELETE NO ACTION
+    PRIMARY KEY (deposit_id),
+    FOREIGN KEY (account_id) REFERENCES Account(account_id) ON DELETE NO ACTION,
+    FOREIGN KEY (transaction_id) REFERENCES Transaction(transaction_id) ON DELETE CASCADE
 );
 
 -- -- Create Bank_Transfer table
 CREATE TABLE Bank_Transfer (
-    transaction_id INT NOT NULL AUTO_INCREMENT,
+    transaction_id INT NOT NULL,
+    transfer_id INT NOT NULL AUTO_INCREMENT,
     account_id INT NOT NULL,
     name VARCHAR(100) NOT NULL,
     date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -101,7 +106,8 @@ CREATE TABLE Bank_Transfer (
     transaction_type VARCHAR(20) NOT NULL,
     from_account INT NULL,
     to_account INT NULL,
-    PRIMARY KEY (transaction_id),
+    PRIMARY KEY (transfer_id),
+    FOREIGN KEY (transaction_id) REFERENCES Transaction(transaction_id) ON DELETE CASCADE,
     FOREIGN KEY (account_id) REFERENCES Account(account_id) ON DELETE NO ACTION,
     FOREIGN KEY (from_account) REFERENCES Account(account_id) ON DELETE
     SET
