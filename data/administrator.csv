@@ -1,3 +1,3 @@
 administrator_id,first_name,last_name,email,SSN,password
-1,John,Smith,john.smith.admin@example.com,422943409,Z850kEnydx
-2,Thomas,Johnson,thomas.johnson.admin@example.com,922449957,js8JHUdKF0
+1,Admin,One,admin.one@example.com,111-11-1111,$2b$12$DNDIe5us0YyrQ2UPKXrhD.fZFmhhLVEwfuGuxGuMPd/gw9.KSVNB2
+2,Admin,Two,admin.two@example.com,222-22-2222,$2b$12$SE0i2bOZjIXQSWWlpwJpVeKqQbdhFCHy2uZ9nz6Er89qLVhy6h4Ui

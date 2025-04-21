@@ -1,11 +1,4 @@
-owner_id,account_status,balance,account_history
-1,active,378.71,
-2,active,4271.58,
-3,active,3015.67,
-4,active,2078.5,
-5,active,2936.7,
-6,active,3134.97,
-7,closed,3321.13,
-8,closed,4680.06,
-9,active,3381.66,
-10,closed,1269.56,
+account_id,owner_id,account_status,balance,account_history
+1,1,active,1000.00,"Opened 2025-01-10 with deposit"
+2,2,active,2500.50,"Opened 2025-01-15 with deposit"
+3,3,closed,0.00,"Closed 2025-04-01 after withdrawal"

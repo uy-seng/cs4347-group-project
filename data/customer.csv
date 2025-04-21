@@ -1,11 +1,4 @@
-first_name,last_name,email,SSN,password
-Alice,Smith,alice.smith@example.com,602276804,bnFbmOHnKY
-Bob,Johnson,bob.johnson@example.com,086319300,0LYTH8xIZM
-Carol,Williams,carol.williams@example.com,857022021,rNwwmq6OLk
-Dave,Brown,dave.brown@example.com,713965687,obtqn62tOy
-Eve,Jones,eve.jones@example.com,942252583,n9FfcgMXAd
-Frank,Miller,frank.miller@example.com,395980765,qNgAC72qFl
-Grace,Davis,grace.davis@example.com,982661757,Gaub52Ztd2
-Heidi,Garcia,heidi.garcia@example.com,904077145,q2AnHTmt9O
-Ivan,Rodriguez,ivan.rodriguez@example.com,451235220,No41eoPni6
-Judy,Wilson,judy.wilson@example.com,547810444,TP9gyv1plB
+customer_id,first_name,last_name,email,SSN,password
+1,John,Doe,john.doe@example.com,123-45-6789,$2b$12$1cMkk1GuD/qwn1X7JGAvaeCEPnp8lloYUQCJdrDpr1Ds3E4OI9bPC
+2,Jane,Smith,jane.smith@example.com,987-65-4321,$2b$12$HVF0dyGXxt/WOr..wytz0uw/u74.KLaR09K5s04qmJgG626fCt9q.
+3,Alice,Johnson,alice.johnson@example.com,555-66-7777,$2b$12$d9/PMCEfYQ4eib2E7yZfLu.zwei8ADxvJy71ITtNQYeB9Og5h2yiO
