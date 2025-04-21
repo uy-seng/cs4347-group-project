@@ -66,8 +66,8 @@ CREATE TABLE Transaction (
 
 -- -- Create Bank_Withdrawal table
 CREATE TABLE Bank_Withdrawal (
-    transaction_id INT NOT NULL,
     withdrawal_id INT NOT NULL AUTO_INCREMENT,
+    transaction_id INT NOT NULL,
     account_id INT NOT NULL,
     name VARCHAR(100) NOT NULL,
     date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -81,8 +81,8 @@ CREATE TABLE Bank_Withdrawal (
 
 -- -- Create Bank_Deposit table
 CREATE TABLE Bank_Deposit (
-    transaction_id INT NOT NULL,
     deposit_id INT NOT NULL AUTO_INCREMENT,
+    transaction_id INT NOT NULL,
     account_id INT NOT NULL,
     name VARCHAR(100) NOT NULL,
     date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -96,8 +96,8 @@ CREATE TABLE Bank_Deposit (
 
 -- -- Create Bank_Transfer table
 CREATE TABLE Bank_Transfer (
-    transaction_id INT NOT NULL,
     transfer_id INT NOT NULL AUTO_INCREMENT,
+    transaction_id INT NOT NULL,
     account_id INT NOT NULL,
     name VARCHAR(100) NOT NULL,
     date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
