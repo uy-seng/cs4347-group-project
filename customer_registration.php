@@ -15,10 +15,8 @@
     $SSN = $_POST["SSN"];
     $password = $_POST["password"];
     $passwordRepeat = $_POST["password_repeat"];
-
     $passwordHash = password_hash($password, PASSWORD_DEFAULT);
     $errors = array();
-
     if (empty($firstName) or empty($lastName) or empty($email) or empty($SSN) or empty($password)) {
       array_push($errors, "All fields are required");
     }
@@ -34,13 +32,26 @@
     if ($password !== $passwordRepeat) {
       array_push($errors, "Passwords do not match.");
     }
-
     if (count($errors) > 0) {
       foreach ($errors as $error) {
         echo "<div>$error</div>";
       }
     } else {
       require_once "database.php";
+      # check if email exist in customer or administrator table
+      $checkSql = "SELECT email FROM Customer WHERE email = ? UNION SELECT email FROM Administrator WHERE email = ?";
+      $chkStmt = mysqli_prepare($conn, $checkSql);
+      mysqli_stmt_bind_param($chkStmt, "ss", $email, $email);
+      mysqli_stmt_execute($chkStmt);
+      mysqli_stmt_store_result($chkStmt);
+
+      # if email exist we will not allow registration
+      if (mysqli_stmt_num_rows($chkStmt) > 0) {
+        echo "<div>This email is already registered.</div>";
+        exit;
+      }
+
+      mysqli_stmt_close($chkStmt);
       mysqli_begin_transaction($conn);
       $sql = "INSERT INTO Customer (first_name, last_name, email, SSN, password) VALUES (?,?,?,?,?)";
       $stmt = mysqli_stmt_init($conn);
@@ -48,12 +59,10 @@
       if ($prepareStmt) {
         mysqli_stmt_bind_param($stmt, "sssss", $firstName, $lastName, $email, $SSN, $passwordHash);
         mysqli_stmt_execute($stmt);
-
         $customerID = mysqli_insert_id($conn);
         $accountStatus = "active";
         $balance = 0.00;
         $accountHistory = "";
-
         $sqlAccount = "INSERT INTO Account (owner_id, account_status, balance, account_history) VALUES (?,?,?,?)";
         $stmtAccount = mysqli_stmt_init($conn);
         $prepareStmtAccount = mysqli_stmt_prepare($stmtAccount, $sqlAccount);
@@ -64,7 +73,6 @@
         } else {
           die("Something went wrong");
         }
-
         echo "<div>Registration Successful! An account has been opened for you.</div>";
       } else {
         die("Something went wrong");
@@ -72,10 +80,8 @@
     }
   }
   ?>
-
   <h1>Customer Registration Form</h1>
   <form action="customer_registration.php" method="post">
-    <!-- Note: customer_id is auto-generated so it isn’t required as user input -->
     <label for="first_name">First Name:</label>
     <input type="text" id="first_name" name="first_name">
     <br><br>
