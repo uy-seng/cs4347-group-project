@@ -23,9 +23,9 @@
 
   <h2>Data Display Pages</h2>
   <ul>
-    <li><a href="admin_information.php">Admin Page</a></li>
+    <li><a href="admin_information.html">Admin Page</a></li>
     <li><a href="account.php">Account Information</a></li>
-    <li><a href="account_history.html">Account History</a></li>
+    <li><a href="account_history.php">Account History</a></li>
   </ul>
 </body>
 
