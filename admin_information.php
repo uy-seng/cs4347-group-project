@@ -37,6 +37,18 @@ if (isset($_POST['suspend'])) {
     $stmt->close();
 }
 
+if (isset($_POST['reinstate'])) {
+    $account_id = intval($_POST['account_id']);
+    $stmt = $conn->prepare("
+        UPDATE Account
+           SET account_status = 'active'
+         WHERE account_id = ?
+    ");
+    $stmt->bind_param("i", $account_id);
+    $stmt->execute();
+    $stmt->close();
+}
+
 $sql = "
     SELECT
         a.account_id,
@@ -76,6 +88,7 @@ $result = $conn->query($sql);
 </head>
 
 <body>
+    <h1>Welcome <?php echo htmlspecialchars($admin["first_name"]) ?></h1>
     <h2>Admin ID: <?php echo htmlspecialchars($admin['administrator_id']); ?></h2>
     <form method="post" action="admin_information.php">
         <table>
@@ -112,7 +125,12 @@ $result = $conn->query($sql);
         <button type="submit" name="suspend" onclick="return confirm('Suspend this account?');">
             Suspend Account
         </button>
+        <button type="submit" name="reinstate" onclick="return confirm('Reinstate this account?');">
+            Reinstate Account
+        </button>
     </form>
+    <br>
+    <a href="logout.php"><button>Logout</button></a>
 </body>
 
 </html>
