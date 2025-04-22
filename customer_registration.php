@@ -38,8 +38,8 @@
       }
     } else {
       require_once "database.php";
-      # check if email exist in customer or administrator table
-      $checkSql = "SELECT email FROM Customer WHERE email = ? UNION SELECT email FROM Administrator WHERE email = ?";
+      # check if email exist in customer table
+      $checkSql = "SELECT email FROM Customer WHERE email = ?";
       $chkStmt = mysqli_prepare($conn, $checkSql);
       mysqli_stmt_bind_param($chkStmt, "ss", $email, $email);
       mysqli_stmt_execute($chkStmt);
