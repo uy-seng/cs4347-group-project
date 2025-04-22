@@ -32,7 +32,7 @@
         if (password_verify($password, $user["password"])) {
           session_start();
           $_SESSION["user"] = $user;
-          header("Location: index.php");
+          header("Location: administrator_information.php");
           die();
         } else {
           echo "<div>Incorrect Password</div>";
