@@ -1,7 +1,5 @@
 <?php
 session_start();
-
-// make sure an administrator is logged in
 if (
     !isset($_SESSION['user']) ||
     !isset($_SESSION['user']['administrator_id'])
@@ -10,28 +8,28 @@ if (
     exit();
 }
 $admin = $_SESSION['user'];
-
 require_once 'database.php';
 
-// handle balance modification
 if (isset($_POST['modify'])) {
     $account_id = intval($_POST['account_id']);
-    $new_balance = floatval($_POST['new_balance']);
-    $stmt = $conn->prepare("
-        UPDATE Account
-           SET balance = ?
-         WHERE account_id = ?
-    ");
-    $stmt->bind_param("di", $new_balance, $account_id);
-    $stmt->execute();
-    $stmt->close();
+    $new_balance = isset($_POST['new_balance']) ? floatval($_POST['new_balance']) : null;
+    if ($new_balance !== null) {
+        $stmt = $conn->prepare("
+            UPDATE Account
+               SET balance = ?
+             WHERE account_id = ?
+        ");
+        $stmt->bind_param("di", $new_balance, $account_id);
+        $stmt->execute();
+        $stmt->close();
+    }
 }
 
-// handle account deletion
-if (isset($_POST['delete'])) {
+if (isset($_POST['suspend'])) {
     $account_id = intval($_POST['account_id']);
     $stmt = $conn->prepare("
-        DELETE FROM Account
+        UPDATE Account
+           SET account_status = 'suspended'
          WHERE account_id = ?
     ");
     $stmt->bind_param("i", $account_id);
@@ -39,7 +37,6 @@ if (isset($_POST['delete'])) {
     $stmt->close();
 }
 
-// fetch all accounts with customer names
 $sql = "
     SELECT
         a.account_id,
@@ -80,7 +77,6 @@ $result = $conn->query($sql);
 
 <body>
     <h2>Admin ID: <?php echo htmlspecialchars($admin['administrator_id']); ?></h2>
-
     <form method="post" action="admin_information.php">
         <table>
             <thead>
@@ -108,15 +104,13 @@ $result = $conn->query($sql);
                 <?php endwhile; ?>
             </tbody>
         </table>
-
         <p>
             <label for="new_balance">New Balance:</label>
-            <input type="number" step="0.01" name="new_balance" id="new_balance" placeholder="0.00" required>
+            <input type="number" step="0.01" name="new_balance" id="new_balance" placeholder="0.00">
         </p>
-
         <button type="submit" name="modify">Modify Balance</button>
-        <button type="submit" name="delete" onclick="return confirm('Are you sure you want to delete this account?');">
-            Delete Account
+        <button type="submit" name="suspend" onclick="return confirm('Suspend this account?');">
+            Suspend Account
         </button>
     </form>
 </body>
