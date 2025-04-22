@@ -16,7 +16,13 @@
     $result = mysqli_query($conn, $sql);
     $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
     if ($user) {
-      if (password_verify($password, $user["password"])) {
+      $ownerID = $user['customer_id'];
+      $sqlAccount = "SELECT * FROM Account WHERE owner_id = $ownerID";
+      $resultAccount = mysqli_query($conn, $sqlAccount);
+      $account = mysqli_fetch_array($resultAccount, MYSQLI_ASSOC);
+      if ($account['account_status'] !== 'active') {
+        echo "<div>Account Suspended</div>";
+      } else if (password_verify($password, $user["password"])) {
         session_start();
         $_SESSION["user"] = $user;
         header("Location: account.php");
@@ -32,7 +38,7 @@
         if (password_verify($password, $user["password"])) {
           session_start();
           $_SESSION["user"] = $user;
-          header("Location: administrator_information.php");
+          header("Location: admin_information.php");
           die();
         } else {
           echo "<div>Incorrect Password</div>";
