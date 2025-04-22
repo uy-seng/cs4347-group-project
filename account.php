@@ -44,8 +44,8 @@ if (!$account) {
   </div>
   <a href="bank_withdrawal.php"><button>Withdrawal</button></a>
   <a href="bank_deposit.php"><button>Deposit</button></a>
-  <a href="bank_transfer.html"><button>Transfer</button></a>
-  <a href="account_history.html"><button>Account History</button></a>
+  <a href="bank_transfer.php"><button>Transfer</button></a>
+  <a href="account_history.php"><button>Account History</button></a>
   <br><br>
   <a href="logout.php"><button>Logout</button></a>
 </body>
