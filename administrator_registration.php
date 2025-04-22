@@ -8,6 +8,7 @@
 
 <body>
   <?php
+  $errors = array();
   if (isset($_POST["submit"])) {
     $firstName = $_POST["first_name"];
     $lastName = $_POST["last_name"];
@@ -16,7 +17,7 @@
     $password = $_POST["password"];
     $passwordRepeat = $_POST["password_repeat"];
     $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-    $errors = array();
+    $completeTransaction = "";
     if (empty($firstName) or empty($lastName) or empty($email) or empty($SSN) or empty($password)) {
       array_push($errors, "All fields are required");
     }
@@ -32,32 +33,40 @@
     if ($password !== $passwordRepeat) {
       array_push($errors, "Passwords do not match.");
     }
-    if (count($errors) > 0) {
-      foreach ($errors as $error) {
-        echo "<div>$error</div>";
-      }
-    } else {
-      require_once "database.php";
-      // check if email exist in administrator table
-      $checkSql = "SELECT email FROM Administrator WHERE email = ?";
-      $chkStmt = mysqli_prepare($conn, $checkSql);
-      mysqli_stmt_bind_param($chkStmt, "s", $email);
-      mysqli_stmt_execute($chkStmt);
-      mysqli_stmt_store_result($chkStmt);
+    require_once "database.php";
+    // check if email exist in administrator table
+    $checkSql = "SELECT email FROM Administrator WHERE email = ?";
+    $chkStmt = mysqli_prepare($conn, $checkSql);
+    mysqli_stmt_bind_param($chkStmt, "s", $email);
+    mysqli_stmt_execute($chkStmt);
+    mysqli_stmt_store_result($chkStmt);
 
-      // if email exist we will not allow registration
-      if (mysqli_stmt_num_rows($chkStmt) > 0) {
-        echo "<div>This email is already registered.</div>";
-        exit;
-      }
-      mysqli_stmt_close($chkStmt);
+    // if email exist we will not allow registration
+    if (mysqli_stmt_num_rows($chkStmt) > 0) {
+      array_push($errors, "This email is already registered.");
+    }
+    mysqli_stmt_close($chkStmt);
+
+    // check if email exist in customer table
+    $checkSql = "SELECT email FROM Customer WHERE email = ?";
+    $chkStmt = mysqli_prepare($conn, $checkSql);
+    mysqli_stmt_bind_param($chkStmt, "s", $email);
+    mysqli_stmt_execute($chkStmt);
+    mysqli_stmt_store_result($chkStmt);
+
+    // if email exist we will not allow registration
+    if (mysqli_stmt_num_rows($chkStmt) > 0) {
+      array_push($errors, "This email is already registered.");
+    }
+    mysqli_stmt_close($chkStmt);
+    if (count($errors) === 0) {
       $sql = "INSERT INTO Administrator (first_name, last_name, email, SSN, password) VALUES (?,?,?,?,?)";
       $stmt = mysqli_stmt_init($conn);
       $prepareStmt = mysqli_stmt_prepare($stmt, $sql);
       if ($prepareStmt) {
         mysqli_stmt_bind_param($stmt, "sssss", $firstName, $lastName, $email, $SSN, $passwordHash);
         mysqli_stmt_execute($stmt);
-        echo "<div>Registration Successful!</div>";
+        $completeTransaction = "Registration Successful!";
       } else {
         die("Something went wrong");
       }
@@ -65,6 +74,17 @@
   }
   ?>
   <h1>Administrator Registration Form</h1>
+  <?php
+  if (count($errors) > 0) {
+    foreach ($errors as $error) {
+      echo "<div>$error</div>";
+    }
+  }
+
+  if (!empty($completeTransaction)) {
+    echo "<div>$completeTransaction</div>";
+  }
+  ?>
   <form action="administrator_registration.php" method="post">
     <label for="first_name">First Name:</label>
     <input type="text" id="first_name" name="first_name" />
