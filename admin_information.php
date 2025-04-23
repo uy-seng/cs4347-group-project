@@ -63,74 +63,105 @@ $sql = "
 ";
 $result = $conn->query($sql);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <title>Admin – Account Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
+        body {
+            background-color: #f8f9fa;
         }
 
-        th,
-        td {
-            padding: 8px;
-            border: 1px solid #ccc;
+        .card {
+            margin: 40px auto;
+            padding: 30px;
+            max-width: 1000px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            margin-top: 20px;
         }
 
         input[type="number"] {
-            width: 80px;
+            max-width: 150px;
         }
     </style>
 </head>
 
 <body>
-    <h1>Welcome <?php echo htmlspecialchars($admin["first_name"]) ?></h1>
-    <h2>Admin ID: <?php echo htmlspecialchars($admin['administrator_id']); ?></h2>
-    <form method="post" action="admin_information.php">
-        <table>
-            <thead>
-                <tr>
-                    <th>Select</th>
-                    <th>Account ID</th>
-                    <th>Owner ID</th>
-                    <th>Customer Name</th>
-                    <th>Balance</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php while ($row = $result->fetch_assoc()): ?>
-                    <tr>
-                        <td>
-                            <input type="radio" name="account_id" value="<?php echo $row['account_id']; ?>" required>
-                        </td>
-                        <td><?php echo $row['account_id']; ?></td>
-                        <td><?php echo $row['owner_id']; ?></td>
-                        <td><?php echo htmlspecialchars($row['customer_name']); ?></td>
-                        <td><?php echo number_format($row['balance'], 2); ?></td>
-                        <td><?php echo htmlspecialchars($row['account_status']); ?></td>
-                    </tr>
-                <?php endwhile; ?>
-            </tbody>
-        </table>
-        <p>
-            <label for="new_balance">New Balance:</label>
-            <input type="number" step="0.01" name="new_balance" id="new_balance" placeholder="0.00">
-        </p>
-        <button type="submit" name="modify">Modify Balance</button>
-        <button type="submit" name="suspend" onclick="return confirm('Suspend this account?');">
-            Suspend Account
-        </button>
-        <button type="submit" name="reinstate" onclick="return confirm('Reinstate this account?');">
-            Reinstate Account
-        </button>
-    </form>
-    <br>
-    <a href="logout.php"><button>Logout</button></a>
+    <div class="container">
+        <div class="card">
+            <h1 class="text-center text-primary mb-2">Welcome, <?php echo htmlspecialchars($admin["first_name"]) ?></h1>
+            <h5 class="text-center text-muted mb-4">Admin ID:
+                <?php echo htmlspecialchars($admin['administrator_id']); ?>
+            </h5>
+
+            <form method="post" action="admin_information.php">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover table-striped">
+                        <thead class="table-primary text-center">
+                            <tr>
+                                <th>Select</th>
+                                <th>Account ID</th>
+                                <th>Owner ID</th>
+                                <th>Customer Name</th>
+                                <th>Balance</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php while ($row = $result->fetch_assoc()): ?>
+                                <tr>
+                                    <td class="text-center">
+                                        <input class="form-check-input" type="radio" name="account_id"
+                                            value="<?php echo $row['account_id']; ?>" required>
+                                    </td>
+                                    <td><?php echo $row['account_id']; ?></td>
+                                    <td><?php echo $row['owner_id']; ?></td>
+                                    <td><?php echo htmlspecialchars($row['customer_name']); ?></td>
+                                    <td>$<?php echo number_format($row['balance'], 2); ?></td>
+                                    <td>
+                                        <span
+                                            class="badge <?php echo $row['account_status'] === 'active' ? 'bg-success' : 'bg-secondary'; ?>">
+                                            <?php echo htmlspecialchars($row['account_status']); ?>
+                                        </span>
+                                    </td>
+                                </tr>
+                            <?php endwhile; ?>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="row mt-4 mb-3 align-items-center">
+                    <div class="col-md-4">
+                        <label for="new_balance" class="form-label">New Balance:</label>
+                        <input type="number" step="0.01" name="new_balance" id="new_balance" class="form-control"
+                            placeholder="0.00">
+                    </div>
+                    <div class="col-md-8 d-flex justify-content-end align-items-end gap-2 mt-3 mt-md-0">
+                        <button type="submit" name="modify" class="btn btn-warning">Modify Balance</button>
+                        <button type="submit" name="suspend" class="btn btn-danger"
+                            onclick="return confirm('Suspend this account?');">
+                            Suspend
+                        </button>
+                        <button type="submit" name="reinstate" class="btn btn-success"
+                            onclick="return confirm('Reinstate this account?');">
+                            Reinstate
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="text-center mt-4">
+                <a href="logout.php" class="btn btn-outline-danger">Logout</a>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

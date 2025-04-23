@@ -4,6 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <title>Administrator Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <link href="styles.css" rel="stylesheet">
 </head>
 
 <body>
@@ -73,41 +76,52 @@
     }
   }
   ?>
-  <h1>Administrator Registration Form</h1>
-  <?php
-  if (count($errors) > 0) {
-    foreach ($errors as $error) {
-      echo "<div>$error</div>";
-    }
-  }
 
-  if (!empty($completeTransaction)) {
-    echo "<div>$completeTransaction</div>";
-  }
-  ?>
-  <form action="administrator_registration.php" method="post">
-    <label for="first_name">First Name:</label>
-    <input type="text" id="first_name" name="first_name" />
-    <br /><br />
-    <label for="last_name">Last Name:</label>
-    <input type="text" id="last_name" name="last_name" />
-    <br /><br />
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" />
-    <br /><br />
-    <label for="SSN">SSN:</label>
-    <input type="text" id="SSN" name="SSN" />
-    <br /><br />
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" />
-    <br /><br />
-    <label for="password_repeat">Repeat Password:</label>
-    <input type="password" id="password_repeat" name="password_repeat" />
-    <br><br>
-    <input type="submit" value="Register" name="submit">
-  </form>
-  <div>
-    <p>Already Registered <a href="login.php">Login Here</a></p>
+  <div class="container">
+    <h1>Administrator Registration</h1>
+    <?php
+    if (count($errors) > 0) {
+      foreach ($errors as $error) {
+        echo "<div class='alert alert-danger'>$error</div>";
+      }
+    }
+
+    if (!empty($completeTransaction)) {
+      echo "<div class='alert alert-success'>$completeTransaction</div>";
+    }
+    ?>
+    <form action="administrator_registration.php" method="post" class="mb-4">
+      <div class="form-group">
+        <label for="first_name" class="form-label">First Name:</label>
+        <input type="text" class="form-control" id="first_name" name="first_name" />
+      </div>
+      <div class="form-group">
+        <label for="last_name" class="form-label">Last Name:</label>
+        <input type="text" class="form-control" id="last_name" name="last_name" />
+      </div>
+      <div class="form-group">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" class="form-control" id="email" name="email" />
+      </div>
+      <div class="form-group">
+        <label for="SSN" class="form-label">SSN:</label>
+        <input type="text" class="form-control" id="SSN" name="SSN" />
+      </div>
+      <div class="form-group">
+        <label for="password" class="form-label">Password:</label>
+        <input type="password" class="form-control" id="password" name="password" />
+      </div>
+      <div class="form-group">
+        <label for="password_repeat" class="form-label">Repeat Password:</label>
+        <input type="password" class="form-control" id="password_repeat" name="password_repeat" />
+      </div>
+      <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Register" name="submit">
+      </div>
+    </form>
+    <div>
+      <p>Already Registered <a href="login.php">Login Here</a></p>
+    </div>
   </div>
 </body>
 

@@ -4,6 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Bank Withdrawal Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+  <link href="styles.css" rel="stylesheet">
 </head>
 
 <body>
@@ -106,30 +110,37 @@
     }
   }
   ?>
-  <h1>Bank Withdrawal Form</h1>
-  <?php
-  if (count($errors) > 0) {
-    foreach ($errors as $error) {
-      echo "<div>$error</div>";
-    }
-  }
 
-  if (!empty($completeTransaction)) {
-    echo "<div>$completeTransaction</div>";
-  }
-  ?>
-  <form action="#" method="post">
-    <!-- transaction_id is auto-generated -->
-    <label for="name">Transaction Name/Description:</label>
-    <input type="text" id="name" name="name" required>
-    <br><br>
-    <label for="amount">Amount:</label>
-    <input type="number" id="amount" name="amount" step="0.01" required>
-    <br><br>
-    <input type="submit" value="Withdrawal" name="submit">
-  </form>
-  <br>
-  <a href="account.php">Back to Account</a>
+  <div class="container">
+    <h1 class="mb-4 text-primary">Bank Withdrawal</h1>
+    <?php
+    if (count($errors) > 0) {
+      foreach ($errors as $error) {
+        echo "<div class='alert alert-danger'>$error</div>";
+      }
+    }
+
+    if (!empty($completeTransaction)) {
+      echo "<div class='alert alert-success'>$completeTransaction</div>";
+    }
+    ?>
+    <form action="bank_withdrawal.php" method="post" class="mb-4">
+      <!-- transaction_id is auto-generated -->
+
+      <div class="form-group">
+        <label for="name" class="form-label">Transaction Name/Description:</label>
+        <input class="form-control" type="text" placeholder="Groceries" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="amount" class="form-label">Amount:</label>
+        <input class="form-control" type="text" placeholder="100.00" id="amount" name="amount" required>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Withdrawal" name="submit" class="btn btn-primary">
+      </div>
+    </form>
+    <a href="account.php" class="btn btn-outline-secondary">Back to Account</a>
+  </div>
 </body>
 
 </html>
