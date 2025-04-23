@@ -112,36 +112,50 @@ if (isset($_POST["submit"])) {
 <head>
   <meta charset="UTF-8">
   <title>Bank Transfer Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+  <link href="styles.css" rel="stylesheet">
 </head>
 
 <body>
-  <h1>Bank Transfer Form</h1>
-  <?php
-  if (count($errors) > 0) {
-    foreach ($errors as $error) {
-      echo "<div>$error</div>";
+  <div class="container">
+    <h1 class="mb-4 text-primary">Bank Transfer</h1>
+    <?php
+    if (count($errors) > 0) {
+      foreach ($errors as $error) {
+        echo "<div class='alert alert-danger'>$error</div>";
+      }
     }
-  }
 
-  if (!empty($completeTransfer)) {
-    echo "<div>$completeTransfer</div>";
-  }
-  ?>
-  <form action="#" method="post">
-    <!-- transaction_id is auto-generated -->
-    <label for="name">Transaction Name/Description:</label>
-    <input type="text" id="name" name="name">
-    <br><br>
-    <label for="amount">Amount:</label>
-    <input type="number" id="amount" name="amount" step="0.01">
-    <br><br>
-    <label for="to_account">To Account:</label>
-    <input type="number" id="to_account" name="to_account">
-    <br><br>
-    <input type="submit" value="Transfer" name="submit">
-  </form>
-  <br>
-  <a href="account.php">Back To Account</a>
+    if (!empty($completeTransfer)) {
+      echo "<div class='alert alert-success'>$completeTransfer</div>";
+    }
+    ?>
+    <form action="bank_transfer.php" method="post" class="mb-4">
+      <!-- transaction_id is auto-generated -->
+
+      <div class="form-group">
+        <label for="name" class="form-label">Transaction Name/Description:</label>
+        <input class="form-control" type="text" placeholder="Gas Money" id="name" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="amount" class="form-label">Amount:</label>
+        <input class="form-control" type="number" placeholder="20.00" id="amount" name="amount" step="0.01" required>
+      </div>
+
+      <div class="form-group">
+        <label for="to_account" class="form-label">To Account:</label>
+        <input class="form-control" type="number" placeholder="1" id="to_account" name="to_account" required>
+      </div>
+
+      <div class="form-group">
+        <input type="submit" value="Transfer" name="submit" class="btn btn-primary">
+      </div>
+    </form>
+    <a href="account.php" class="btn btn-outline-secondary">Back To Account</a>
+  </div>
 </body>
 
 </html>

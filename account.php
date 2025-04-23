@@ -32,22 +32,35 @@ if (!$account) {
 <head>
   <meta charset="UTF-8">
   <title>Account Information</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body>
-  <h1>Welcome <?php echo htmlspecialchars($user["first_name"]) ?></h1>
-  <!-- account_id is auto-generated -->
-  <div>
-    <p>Account Number: <?php echo htmlspecialchars($account["account_id"]) ?></p>
-    <p>Account Status: <?php echo htmlspecialchars($account["account_status"]) ?></p>
-    <p>Balance: <?php echo htmlspecialchars($account["balance"]) ?></p>
+<body class="bg-light">
+  <div class="container mt-5">
+    <h1 class="mb-4 text-primary">Welcome, <?php echo htmlspecialchars($user["first_name"]) ?></h1>
+
+    <div class="card shadow-sm mb-4">
+      <div class="card-body">
+        <h5 class="card-title ">Account Information</h5>
+        <p class="card-text "><strong>Account Number:</strong> <?php echo htmlspecialchars($account["account_id"]) ?>
+        </p>
+        <p class="card-text"><strong>Account Status:</strong> <?php echo htmlspecialchars($account["account_status"]) ?>
+        </p>
+        <p class="card-text"><strong>Balance:</strong> $<?php echo htmlspecialchars($account["balance"]) ?></p>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <a href="bank_withdrawal.php" class="btn btn-primary me-2 mb-2">Withdrawal</a>
+      <a href="bank_deposit.php" class="btn btn-primary me-2 mb-2">Deposit</a>
+      <a href="bank_transfer.php" class="btn btn-primary me-2 mb-2">Transfer</a>
+      <a href="account_history.php" class="btn btn-primary me-2 mb-2">Account History</a>
+    </div>
+
+    <a href="logout.php" class="btn btn-outline-danger">Logout</a>
   </div>
-  <a href="bank_withdrawal.php"><button>Withdrawal</button></a>
-  <a href="bank_deposit.php"><button>Deposit</button></a>
-  <a href="bank_transfer.php"><button>Transfer</button></a>
-  <a href="account_history.php"><button>Account History</button></a>
-  <br><br>
-  <a href="logout.php"><button>Logout</button></a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
